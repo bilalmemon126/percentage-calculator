@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="main">
+            <div id="box1" class="box">
+                <div id="inputs">
+                    <div class="inp">
+                        <input type="text" placeholder="Obtained Marks" id="obtained">
+                        <span></span>
+                    </div>
+                    <div class="inp">
+                        <input type="text" placeholder="Total Marks" id="total">
+                        <span></span>
+                    </div>
+                    <button class="calculate" onclick="percentage()">Calculate</button>
+                </div>
+            </div>
+            <div id="box2" class="box">
+                <div id="text">
+                    <div class="text">
+                        <p class="result">Result</p>
+                    </div>
+                    <div class="text">
+                        <p class="percent">75%</p>
+                    </div>
+                    <div class="text">
+                        <p class="grade">A Grade</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="jquery.min.js"></script>
+    <script>
+
+        function percentage() {
+            let obtained = parseInt(document.querySelector('#obtained').value);
+            let total = parseInt(document.querySelector('#total').value);
+
+            calculate = Math.round((obtained / total) * 100);
+
+            
+            if (inputchecker('input', 'error')) {
+                document.querySelector('.percent').innerHTML = calculate + '%';
+
+                if (calculate >= 80 && calculate <= 100) {
+                    document.querySelector('.grade').innerHTML = 'A1 Grade';
+                }
+
+                else if (calculate >= 70 && calculate <= 79) {
+                    document.querySelector('.grade').innerHTML = 'A Grade';
+                }
+
+                else if (calculate >= 60 && calculate <= 69) {
+                    document.querySelector('.grade').innerHTML = 'B Grade';
+                }
+
+                else if (calculate >= 50 && calculate <= 59) {
+                    document.querySelector('.grade').innerHTML = 'C Grade';
+                }
+
+                else if (calculate >= 40 && calculate <= 49) {
+                    document.querySelector('.grade').innerHTML = 'D Grade';
+                }
+
+                else if (calculate >= 35 && calculate <= 39) {
+                    document.querySelector('.grade').innerHTML = 'Pass';
+                }
+
+                else {
+                    document.querySelector('.grade').innerHTML = 'Fail';
+                }
+            }
+        }
+
+
+
+
+
+
+        function inputchecker(input, classname) {
+            inp_ck = true;
+            $(input).each(function (index, element) {
+                if (this.value === '') {
+                    $('#' + this.id).addClass(classname).siblings('span').text(this.id + ' marks required').css({ 'color': 'red' })
+                    inp_ck = false;
+                }
+                else {
+                    $('#' + this.id).removeClass(classname).siblings('span').text('')
+                }
+            })
+            return inp_ck;
+        }
+    </script>
+</body>
+
+</html>

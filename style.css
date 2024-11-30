@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.error{
+    border: 1.5px solid red !important;
+}
+#container{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0, 44, 44);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#main{
+    width: 30%;
+    height: 80vh;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 3px rgb(44, 108, 109);
+}
+#box1{
+    width: 100%;
+    height: 35vh;
+    background-color: rgb(0, 189, 189);
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#inputs{
+    width: 80%;
+    height: 33vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.inp{
+    width: 100%;
+    height: 6vh;
+}
+.inp > span{
+    color: red;
+    font-size: 15px;
+}
+.inp > input{
+    width: 100%;
+    height: 6vh;
+    border-radius: 10px;
+    border: 0px solid red;
+    padding-left: 8px;
+}
+#inputs > .calculate{
+    width: 80px;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    background-color: white;
+}
+#box2{
+    width: 100%;
+    height: 45vh;
+    background-color: rgb(223, 235, 235);
+    border-radius: 0 0 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#text{
+    width: 90%;
+    height: 40vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.text{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.result{
+    font-size: 28px;
+}
+.percent{
+    font-size: 66px;
+}
+.grade{
+    font-size: 28px;
+}
